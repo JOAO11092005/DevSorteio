@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSorteio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="imagem">
+            <img src="./DevSorteio/Template/Mobile/Log_in/Captura_de_tela_2023-10-15_112524-removebg-preview.png" alt="">
+        </div>
+        <br>
+        <p>Sortear um número</p>
+        <div class="caixa">
+            <input class="numeroInicial" type="text" placeholder="entre"  id="numeroInicial">
+            <input type="text" placeholder="e" id="numeroFinal">
+            <!-- <input type="number" placeholder="Entre" id="numeroInicial">
+            <input type="number" placeholder="E" id="numeroFinal"> -->
+        </div>
+        
+        <br>
+        <button  onclick="sortearNumero()">Sortear</button>
+
+        <p id="resultado"></p>
+    </main>
+
+    <script>
+        function sortearNumero() {
+            var numeroInicial = parseInt(document.getElementById("numeroInicial").value);
+            var numeroFinal = parseInt(document.getElementById("numeroFinal").value);
+
+            if (isNaN(numeroInicial) || isNaN(numeroFinal)) {
+                document.getElementById("resultado").innerHTML = "Digite um Número nos dois campos.";
+                return;
+            }
+
+            if (numeroInicial >= numeroFinal) {
+                document.getElementById("resultado").innerHTML = "O número inicial deve ser menor que o número final.";
+                return;
+            }
+
+            var resultado = Math.floor(Math.random() * (numeroFinal - numeroInicial + 1)) + numeroInicial;
+            document.getElementById("resultado").innerHTML = "O número sorteado é: " + resultado;
+        }
+    </script>
+</body>
+</html>
