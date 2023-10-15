@@ -35,7 +35,7 @@ p {
 
 }
 .imagem{
-    margin-bottom: 126px;
+    margin-bottom: 10px;
 }
 .caixa {
     display: flex;
@@ -91,6 +91,7 @@ button {
 @media (max-width: 500px){
     .imagem img{
         width: 300px;
+        
     }
     .caixa{
         display: block;
